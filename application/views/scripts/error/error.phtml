@@ -1,0 +1,12 @@
+<html>
+    <head></head>
+    <body>
+        <h3>
+            <?php
+                echo $this->exception->getMessage();
+            ?>
+        </h3>
+        <pre><? echo $this->exception->getTraceAsString();?>
+        </pre>
+    </body>
+</html>
