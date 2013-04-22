@@ -21,6 +21,7 @@ class AdminController extends Zend_Controller_Action{
         $res_items = $items->fetchAll();
         $res_category = $category->fetchAll();
         $this->view->parent_category = $res_category;
+        $this->view->list_item = $res_items;
     }
     
     public function addCategoryAction(){
