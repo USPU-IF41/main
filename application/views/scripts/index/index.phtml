@@ -1,13 +1,12 @@
-<h3><?=$this->thisDate;?></h3>
-<ul>
-    <li>
-        <a href="/admin">Админка</a>
-    </li>
-    <?php
-        foreach ($this->category as $row):
-            ?>
-    <li><?=$row->name;?></li>
-    <?php
-        endforeach;
-        ?>
-</ul>
+<div class="row">
+    <div class="span3">
+        <ul>
+            <li>
+                <a href="/admin">Админка</a>
+            </li>
+            <?php foreach ($this->category as $row):?>
+                <li><?= $row->name; ?></li>
+            <?php endforeach;?>
+        </ul>
+    </div>
+</div>

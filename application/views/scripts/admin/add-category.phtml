@@ -1,33 +1,45 @@
-<form method="POST">
-    <table>
-        <tbody>
-            <tr>
-                <td>
-                    Имя
-                </td>
-                <td>
-                    <input name="name">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Родитель
-                </td>
-                <td>
-                    <select name="parent">
-                        <option selected disabled value="0">Выберете категорию</option>
-                        <option value="0">Корневой</option>
-                        <?php foreach ($this->parent_category as $row): ?>
-                        <option value="<?=$row->categoryId;?>"><?=$row->name;?></option>
-                        <?php endforeach;?>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input class="btn btn-primary" type="submit" value="Save" name="btSave">
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</form>
+<div class="row">
+    <div class="span3">
+        <div class="well well-small affix">
+            <ul class="nav nav-list">
+                <li class="active"><a href="/admin/add-category">Добавить категорию</a></li>
+                <li><a href="/admin/add-item">Добавить товар</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="span9">
+        <form method="POST">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Имя
+                        </td>
+                        <td>
+                            <input name="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Родитель
+                        </td>
+                        <td>
+                            <select name="parent">
+                                <option selected disabled value="0">Выберете категорию</option>
+                                <option value="0">Корневой</option>
+                                <?php foreach ($this->parent_category as $row): ?>
+                                    <option value="<?= $row->categoryId; ?>"><?= $row->name; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="btn btn-primary" type="submit" value="Save" name="btSave">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

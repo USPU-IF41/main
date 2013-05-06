@@ -1,5 +1,12 @@
 <div class="row">
-    <div class="span3"></div>
+    <div class="span3">
+        <div class="well well-small affix">
+            <ul class="nav nav-list">
+                <li><a href="/admin/add-category">Добавить категорию</a></li>
+                <li class="active"><a href="/admin/add-item">Добавить товар</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="span9">
         <form method="POST">
             <table>
@@ -43,8 +50,8 @@
             </table>
         </form>
         <ul>
-            <?php foreach ($this->parent_category as $row): ?>
-                <option value="<?= $row->categoryId; ?>"><?= $row->name; ?></option>
+            <?php foreach ($this->list_items as $row): ?>
+                <li><?= $row->name; ?></li>
             <?php endforeach; ?>
         </ul>
     </div>

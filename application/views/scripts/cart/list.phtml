@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="span3">
+        <div class="well well-small affix">
+            <ul class="nav nav-list">
+                <li class="nav-header">Каталог</li>
+                <?php foreach ($this->parent_category as $row): ?>
+                    <li><?= $row->name; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <div class="span9">
+        <h2>Каталог</h2>
+        <div class="row">
+            <div class="span9">
+                <table class="table table-bordered">
+                    <thead>
+                        <th>id</th>
+                        <th>Название</th>
+                        <th>Цена</th>
+                        <th>Купить</th>
+                    </thead>
+                    <tbody>
+                        <? foreach ($this->catalog as $row): ?>
+                        <tr>
+                            <td><?=$row->itemsid;?></td>
+                            <td><?=$row->name;?></td>
+                            <td><?=$row->price;?></td>
+                            <td>
+                                <button type="button" class="btn btn-success" onclick="addItem(<?=$row->itemsid;?>)">
+                                    <i class="icon-barcode icon-white"></i> Купить
+                                </button>
+                            </td>
+                        </tr>
+                        <? endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
